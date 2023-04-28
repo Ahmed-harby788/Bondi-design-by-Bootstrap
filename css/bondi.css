@@ -3,8 +3,9 @@
     --green-color: #33d1cc;
     --red-color: #ff3150;
     --yellow-color: #ffc400;
+    --section-color: #eff7fa;
 }
-body{
+body{ 
     font-family: 'Roboto', sans-serif;
 }
 .main-btn{
@@ -16,6 +17,16 @@ body{
 .main-btn:hover{
     background-color: var(--green-color);
     color: var(--yellow-color);
+}
+.main-title::after{
+    content: "";
+    height: 2px;
+    width: 120px;
+    position: absolute;
+    background-color: var(--green-color);
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 /* Start Navbar */
 .navbar{
@@ -52,3 +63,77 @@ color: var(--green-color);
     height: calc(100vh - 70px);
 }
 /* End landing */
+/* Start feastures */
+.features .icon-holder{
+    height: 200px;
+}
+.features .icon-holder svg{
+    left: 50%;
+    transform: translateX(-50%);
+}
+.features .icon-holder .number{
+    font-size: 12rem;
+    color: var(--section-color);
+}
+.features .icon-holder .icon{
+    color: var(--green-color);
+}
+.features h4{
+    color: var(--yellow-color)
+}
+/* End feastures */
+/* Start our work */
+.our-work{
+    background-color: var(--section-color);
+}
+.our-work .active{
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+}
+.our-work ul li{
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.our-work ul li:not(.active):hover{
+    color: var(--red-color);
+}
+.our-work .box{
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.our-work .box::before{
+    content: attr(data-work);
+    position: absolute;
+    background-color: rgb(51 209 204 / 76%);
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 1.5rem;
+    transform: translatex(calc(-100% - 5px));
+}
+.our-work .box:hover:before{
+    transform: translatex(0);
+}
+/* End our work */
+/* Start stuff */
+.stuff .desc{
+    max-width : 500px;
+}
+/* End stuff */
+/* Start team */
+.team{
+    background-color: var(--section-color);
+}
+.team h2{
+    color: var(--yellow-color);
+}
+.team h4{
+    background-color: var(--green-color);
+}
+/* End team */
